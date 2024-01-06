@@ -1,6 +1,9 @@
 // import { useState } from 'react';
 import './App.css';
-import Calculator from './Calculator/Calculator';
+// import Composition from './InheritanceVsComposition/Composition';
+import FilterableProductTable from './ThinkingInReact/FilterableProductTable';
+// import Calculator from './Calculator/Calculator';
+// import Inheritance from './InheritanceVsComposition/Inheritance';
 // import Clock from './Clock';
 // import BareInput from './BareInput';
 // import BareButton from './BareButton';
@@ -32,7 +35,10 @@ function App() {
             {/* <ProductList /> */}
             {/* <Form /> */}
             {/* <UncontrolledComponent /> */}
-            <Calculator />
+            {/* <Calculator /> */}
+            {/* <Inheritance /> */}
+            {/* <Composition /> */}
+            <FilterableProductTable />
         </div>
     );
 }

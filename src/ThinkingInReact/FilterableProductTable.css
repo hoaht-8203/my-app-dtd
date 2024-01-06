@@ -1,0 +1,18 @@
+body {
+    font-weight: 500;
+    padding: 0 5rem;
+}
+
+.search-bar input {
+    border: 1.5px solid rgb(176, 176, 176);
+    padding: 0.3rem;
+    outline: none;
+}
+
+.search-bar input[type='checkbox'] {
+    margin-left: 0;
+}
+
+.table tr th {
+    text-align: left;
+}
