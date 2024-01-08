@@ -12,9 +12,10 @@ class ProductTable extends Component {
                 return;
             }
 
-            if (!product.name.toLowerCase().includes(searchText.toLowerCase())) {
+            if (!product.name.toLowerCase().trim().includes(searchText.toLowerCase().trim())) {
                 return;
             }
+
             if (lastCategory !== product.category) {
                 list.push(
                     <ProductCategoryRow key={product.category} category={product.category} />,

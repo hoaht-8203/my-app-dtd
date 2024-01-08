@@ -13,7 +13,9 @@ const initProductList = [
 ];
 
 const fetchApi = new Promise((resolve) => {
-    resolve(initProductList);
+    setTimeout(() => {
+        resolve(initProductList);
+    }, 1000);
 });
 
 class FilterableProductTable extends Component {
@@ -21,7 +23,7 @@ class FilterableProductTable extends Component {
         super(props);
         this.state = {
             productList: [],
-            productName: '',
+            searchText: '',
             isOnlyShowStock: false,
         };
     }
@@ -38,30 +40,30 @@ class FilterableProductTable extends Component {
             });
     }
 
-    onChangeSearchText = (value) => {
-        this.setState({
-            productName: value,
-        });
-    };
-
-    onChangeCheckBox = (value) => {
-        this.setState({
-            isOnlyShowStock: value,
-        });
+    handleChange = (name) => (event) => {
+        if (name === 'searchText') {
+            this.setState({
+                searchText: event.target.value,
+            });
+        } else if (name === 'inStock') {
+            this.setState({
+                isOnlyShowStock: event.target.checked,
+            });
+        }
     };
 
     render() {
-        const { productList, productName, isOnlyShowStock } = this.state;
+        const { productList, searchText, isOnlyShowStock } = this.state;
         return (
             <div className="product-list">
                 <SearchBar
-                    onChangeSearchText={this.onChangeSearchText}
-                    onChangeCheckBox={this.onChangeCheckBox}
+                    handleChange={this.handleChange}
+                    searchText={searchText}
+                    inStock={isOnlyShowStock}
                 />
                 <ProductTable
-                    productName={productName}
                     productList={productList}
-                    searchText={productName}
+                    searchText={searchText}
                     onlyShowStock={isOnlyShowStock}
                 />
             </div>

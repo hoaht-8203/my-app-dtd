@@ -3,10 +3,22 @@ body {
     padding: 0 5rem;
 }
 
-.search-bar input {
+.search-bar {
+    border: 2px solid rgb(208, 208, 208);
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.search-bar input[type='text'] {
     border: 1.5px solid rgb(176, 176, 176);
     padding: 0.3rem;
     outline: none;
+    border-radius: 0.3rem;
+}
+
+.search-bar input[type='text']:focus {
+    border: 1.5px solid rgb(255, 147, 24);
+    box-shadow: 0px 0px 5px rgb(255, 176, 85);
 }
 
 .search-bar input[type='checkbox'] {
@@ -15,4 +27,25 @@ body {
 
 .table tr th {
     text-align: left;
+}
+
+.product-list {
+    margin-top: 1rem;
+    border: 3px solid rgb(208, 208, 208);
+    padding: 1rem;
+    width: 250px;
+    border-radius: 0.5rem;
+    box-shadow: 0px 0px 10px rgb(205, 205, 205);
+}
+
+.category {
+    text-decoration: underline;
+}
+
+.table {
+    margin-top: 1rem;
+    border: 2px solid rgb(208, 208, 208);
+    width: 100%;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }

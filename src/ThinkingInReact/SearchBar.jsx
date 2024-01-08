@@ -1,34 +1,8 @@
 import React, { Component } from 'react';
 
 class SearchBar extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            searchText: '',
-            isChecked: false,
-        };
-    }
-
-    handleChangeSearchText = (event) => {
-        if (this.props.onChangeSearchText) {
-            this.props.onChangeSearchText(event.target.value);
-        }
-        this.setState({
-            searchText: event.target.value,
-        });
-    };
-
-    handleChangeCheckBox = (event) => {
-        if (this.props.onChangeCheckBox) {
-            this.props.onChangeCheckBox(event.target.checked);
-        }
-        this.setState({
-            isChecked: event.target.checked,
-        });
-    };
-
     render() {
-        const { searchText, isChecked } = this.state;
+        const { searchText, inStock, handleChange } = this.props;
         return (
             <div className="search-bar">
                 <div>
@@ -36,15 +10,15 @@ class SearchBar extends Component {
                         placeholder="Search..."
                         type="text"
                         value={searchText}
-                        onChange={this.handleChangeSearchText}
+                        onChange={handleChange('searchText')}
                     />
                 </div>
                 <div>
                     <input
                         type="checkbox"
                         name="onlyStockProduct"
-                        checked={isChecked}
-                        onChange={this.handleChangeCheckBox}
+                        checked={inStock}
+                        onChange={handleChange('inStock')}
                     />
                     <label htmlFor="onlyStockProduct">Only show products in stock</label>
                 </div>
